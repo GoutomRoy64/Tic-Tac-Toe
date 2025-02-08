@@ -94,7 +94,6 @@
     </GridLayout>
 
     <!-- Button for Reset Game -->
-
     <Button
         android:id="@+id/btnReset"
         android:layout_width="wrap_content"
@@ -102,8 +101,7 @@
         android:text="@string/Reset_Game"
         android:textColor="#FFFFFF"
         android:background="#E60808"
-        android:layout_marginTop="20dp"
-        android:onClick="resetGame" />
+        android:layout_marginTop="20dp" />
 
     <!-- Move the AdView to the Bottom -->
     <com.google.android.gms.ads.AdView
@@ -112,8 +110,6 @@
         android:layout_height="wrap_content"
         app:adSize="BANNER"
         app:adUnitId="@string/banner_id"
-        
         android:layout_marginTop="50dp"
-        android:layout_gravity="bottom" /> <!-- Ensure ad is at the bottom -->
-
+        android:layout_gravity="bottom" />
 </LinearLayout>

@@ -17,7 +17,6 @@ import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
-
     AdView adView;
 
     int step = 0;
@@ -32,19 +31,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         adView = findViewById(R.id.adView);
         MobileAds.initialize(this);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
-
-
-
-
-
-
-
-
 
         init();
     }
@@ -65,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
             buttons[i].setTextSize(25);
         }
 
-
         btnReset = findViewById(R.id.btnReset);
         btnReset.setBackgroundColor(Color.parseColor("#E60808")); // Red background
         btnReset.setText("Reset Game");
 
+        // Use setOnClickListener for btnReset
         btnReset.setOnClickListener(view -> resetGame(view));
     }
 
@@ -134,7 +124,6 @@ public class MainActivity extends AppCompatActivity {
         for (Button button : buttons) {
             button.setText("");
             button.setBackgroundColor(Color.parseColor("#4b1c85"));
-
         }
         count = 0;
         step = 0;
