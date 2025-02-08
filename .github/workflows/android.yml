@@ -1,48 +1,26 @@
-name: Build Android App
+name: Android CI
 
 on:
   push:
-    branches:
-      - master  # Trigger workflow when pushing to the master branch
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu virtual machine
+
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+    - name: set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: gradle
 
-      # Step 2: Set up Java JDK
-      - name: Set up JDK
-        uses: actions/setup-java@v2
-        with:
-          java-version: '11'  # Specify the Java version required by your project
-
-      # Step 3: Set up Android SDK
-      - name: Set up Android SDK
-        uses: reactivecircus/android-sdk-manager-action@v2
-        with:
-          sdk-version: '30.0.3'  # Set the Android SDK version (or your preferred version)
-
-      # Step 4: Install dependencies
-      - name: Install dependencies
-        run: ./gradlew dependencies  # Install the required dependencies using Gradle
-
-      # Step 5: Build the app
-      - name: Build the app
-        run: ./gradlew assembleRelease  # Build the release APK (or use assembleDebug for debug)
-
-      # Step 6: Upload the APK as an artifact
-      - name: Upload APK
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-release-apk
-          path: app/release/app-release.apk  # Adjust path to match your project structure
-
-      # Optional Step: Deploy to Google Play (if required)
-      # - name: Deploy to Google Play
-      #   uses: r0adkll/upload-google-play-release@v1
-      #   with:
-      #     service-account-json: ${{ secrets.GOOGLE_PLAY_JSON }}  # Add your service account JSON to GitHub Secrets
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew build
