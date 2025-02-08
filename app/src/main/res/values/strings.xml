@@ -4,6 +4,10 @@
     <string name="banner_id">ca-app-pub-7606209419327494/7561608472</string>
     <string name="banner_id1">ca-app-pub-7606209419327494/6229442986</string>
     <string name="banner_id2">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Reset_Game">Reset Game</string>
+    <string name="New_Game">New Game</string>
+
+
 
 
 </resources>

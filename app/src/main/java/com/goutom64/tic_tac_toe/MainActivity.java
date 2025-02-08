@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         btnReset.setBackgroundColor(Color.parseColor("#E60808")); // Red background
         btnReset.setText("Reset Game");
 
-        btnReset.setOnClickListener(view -> resetGame());
+        btnReset.setOnClickListener(view -> resetGame(view));
     }
 
     public void check(View view) {
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         builder.show();
     }
 
-    public void resetGame() {
+    public void resetGame(View view) {
         for (Button button : buttons) {
             button.setText("");
             button.setBackgroundColor(Color.parseColor("#4b1c85"));
