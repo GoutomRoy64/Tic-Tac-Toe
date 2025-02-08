@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: app-release-apk
-          path: app/build/outputs/apk/release/app-release.apk  # Adjust path to match your project structure
+          path: app/release/app-release.apk  # Adjust path to match your project structure
 
       # Optional Step: Deploy to Google Play (if required)
       # - name: Deploy to Google Play
