@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     Button[] buttons = new Button[9];
     Button btnReset;
     LinearLayout mainLayout;
+    TextView tvTurn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+        tvTurn = findViewById(R.id.tvTurn);
+
 
         init();
     }
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnReset = findViewById(R.id.btnReset);
         btnReset.setBackgroundColor(Color.parseColor("#E60808")); // Red background
-        btnReset.setText("Reset Game");
+        btnReset.setText(R.string.Reset_Game);
 
         // Use setOnClickListener for btnReset
         btnReset.setOnClickListener(view -> resetGame(view));
@@ -70,8 +75,16 @@ public class MainActivity extends AppCompatActivity {
         if (btnCurrent.getText().toString().equals("")) {
             count++;
             btnCurrent.setText(step == 0 ? "X" : "O");
+
+            // Update the turn indicator
+            if (step == 0) {
+                tvTurn.setText(R.string.O);
+            } else {
+                tvTurn.setText(R.string.X);
+            }
+
             step = 1 - step;
-            btnReset.setText("Reset Game");
+            btnReset.setText(R.string.Reset_Game);
 
             if (count > 4) {
                 int[][] winPatterns = {
@@ -95,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
     private boolean checkWinner(int a, int b, int c) {
         return buttons[a].getText().toString().equals(buttons[b].getText().toString()) &&
                 buttons[b].getText().toString().equals(buttons[c].getText().toString()) &&
@@ -114,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage(winner.equals("Draw") ? "It's a Draw!" : "Winner is " + winner);
         builder.setPositiveButton("OK", (dialog, which) ->{
             Log.d("TicTacToe", "OK button clicked");
-            btnReset.setText("New Game");
+            btnReset.setText(R.string.New_Game);
         });
         builder.setCancelable(false);
         builder.show();
@@ -128,5 +142,7 @@ public class MainActivity extends AppCompatActivity {
         count = 0;
         step = 0;
         gameOver = false;
+
+        tvTurn.setText(R.string.X); // Reset turn text
     }
 }
