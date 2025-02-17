@@ -2,8 +2,8 @@
     <string name="app_name">Tic-Tac-Toe</string>
     <string name="app_id" translatable="false">ca-app-pub-7606209419327494~8396177992</string>
     <string name="banner_id" translatable="false">ca-app-pub-7606209419327494/7561608472</string>
-    <string name="banner_id1" translatable="false">ca-app-pub-7606209419327494/6229442986</string>
-    <string name="banner_id2" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_id1" translatable="false">ca-app-pub-7606209419327494/4281118250</string>
+    <string name="banner_id2" translatable="false">ca-app-pub-7606209419327494/7191186778</string>
     <string name="Reset_Game" translatable="false">Reset Game</string>
     <string name="New_Game" translatable="false">New Game</string>
     <string name="X" translatable="false">"Player X's Turn"</string>

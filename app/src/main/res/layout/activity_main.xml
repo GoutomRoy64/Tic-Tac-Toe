@@ -141,4 +141,19 @@
         app:adUnitId="@string/banner_id"
         android:layout_marginTop="50dp"
         android:layout_gravity="bottom" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_id2"
+        android:layout_marginTop="1dp" />
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:adSize="BANNER"
+        app:adUnitId="@string/banner_id1"
+        android:layout_marginTop="1dp"
+         />
 </LinearLayout>

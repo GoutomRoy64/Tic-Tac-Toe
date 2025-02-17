@@ -19,6 +19,8 @@ import com.google.android.gms.ads.MobileAds;
 public class MainActivity extends AppCompatActivity {
 
     AdView adView;
+    AdView adView1;
+    AdView adView2;
 
     int step = 0;
     int count = 0;
@@ -33,11 +35,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+//------------------------------------------------
         adView = findViewById(R.id.adView);
         MobileAds.initialize(this);
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
+//--------------------------------------------------------
+        adView1 = findViewById(R.id.adView1);
+        MobileAds.initialize(this);
+        AdRequest adRequest1 = new AdRequest.Builder().build();
+        adView1.loadAd(adRequest1);
+//--------------------------------------------------
+        adView2 = findViewById(R.id.adView2);
+        MobileAds.initialize(this);
+        AdRequest adRequest2 = new AdRequest.Builder().build();
+        adView2.loadAd(adRequest2);
+//--------------------------------------------------
+
+
+
+
+
+
         tvTurn = findViewById(R.id.tvTurn);
 
 
