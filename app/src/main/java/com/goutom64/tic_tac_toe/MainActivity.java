@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         mainLayout = findViewById(R.id.main);
-        mainLayout.setBackgroundColor(Color.parseColor("#2575fc")); // background
+        mainLayout.setBackgroundColor(Color.parseColor("#A225FC")); // background
 
         int[] buttonIds = {
                 R.id.btn1, R.id.btn2, R.id.btn3,
@@ -55,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
 
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = findViewById(buttonIds[i]);
-            buttons[i].setBackgroundColor(Color.parseColor("#4b1c85")); // Button color
+            buttons[i].setBackgroundColor(Color.parseColor("#82320d")); // Button color
             buttons[i].setTextColor(Color.WHITE);
             buttons[i].setTextSize(25);
         }
 
         btnReset = findViewById(R.id.btnReset);
-        btnReset.setBackgroundColor(Color.parseColor("#E60808")); // Red background
+        btnReset.setBackgroundColor(Color.parseColor("#c21313")); // Red background
         btnReset.setText(R.string.Reset_Game);
 
         // Use setOnClickListener for btnReset
@@ -116,9 +116,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void highlightWinner(int a, int b, int c) {
-        buttons[a].setBackgroundColor(Color.parseColor("#00ADB5")); // Highlight color
-        buttons[b].setBackgroundColor(Color.parseColor("#00ADB5"));
-        buttons[c].setBackgroundColor(Color.parseColor("#00ADB5"));
+        buttons[a].setBackgroundColor(Color.parseColor("#f56c42")); // Highlight color
+        buttons[b].setBackgroundColor(Color.parseColor("#f56c42"));
+        buttons[c].setBackgroundColor(Color.parseColor("#f56c42"));
         gameOver = true;
     }
 
@@ -137,7 +137,8 @@ public class MainActivity extends AppCompatActivity {
     public void resetGame(View view) {
         for (Button button : buttons) {
             button.setText("");
-            button.setBackgroundColor(Color.parseColor("#4b1c85"));
+
+            button.setBackgroundColor(Color.parseColor("#82320d"));
         }
         count = 0;
         step = 0;

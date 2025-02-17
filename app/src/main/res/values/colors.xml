@@ -5,4 +5,5 @@
     <color name="red">#E91E63</color>
     <color name="x_color">#FF5722</color> <!-- Orange for X -->
     <color name="o_color">#2196F3</color> <!-- Blue for O -->
+    <color name="highlight_color">#EDB90C</color> <!-- Highlight color for winner -->
 </resources>

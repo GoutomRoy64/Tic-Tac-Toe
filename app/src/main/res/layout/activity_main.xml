@@ -44,63 +44,82 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="1" />
+            android:tag="1"
+            app:cornerRadius="1dp"
+            android:layout_margin="2dp"
+            />
 
         <Button
             android:id="@+id/btn2"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="2" />
+            android:tag="2"
+            app:cornerRadius="1dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn3"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="3" />
+            android:tag="3"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn4"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="4" />
+            android:tag="4"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn5"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="5" />
+            android:tag="5"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn6"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="6" />
+            android:tag="6"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn7"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="7" />
+            android:tag="7"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn8"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="8" />
+            android:tag="8"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
 
         <Button
             android:id="@+id/btn9"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:onClick="check"
-            android:tag="9" />
+            android:tag="9"
+            app:cornerRadius="0dp"
+            android:layout_margin="2dp"/>
     </GridLayout>
 
     <!-- Button for Reset Game -->
@@ -110,7 +129,7 @@
         android:layout_height="wrap_content"
         android:text="@string/Reset_Game"
         android:textColor="#FFFFFF"
-        android:background="#E60808"
+        app:cornerRadius="0dp"
         android:layout_marginTop="20dp" />
 
     <!-- Move the AdView to the Bottom -->
